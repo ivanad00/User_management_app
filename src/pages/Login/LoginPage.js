@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 
-import { useDispatch, useState } from "react-redux";
+import { useDispatch } from "react-redux";
 import { login } from "../../store/actions/actions";
 
 const LoginPage = () => {
