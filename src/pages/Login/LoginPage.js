@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import { useDispatch } from "react-redux";
 import { login } from "../../store/actions/actions";
+import "./loginPage.css";
 
 // import validateLogin from "../../components/validateLogin/validateLogin.js";
 
@@ -30,59 +31,67 @@ const LoginPage = ({ errors }) => {
   }
 
   return (
-    <div className="loginForm">
-      <Formik
-        initialValues={{
-          email: "",
-          password: "",
-        }}
-        onSubmit={async (values) => {
-          try {
-            await dispatch(login(values.email, values.password));
-          } catch (err) {
-            setError(err.message);
-          }
-        }}
-      >
-        {({ errors, touched, validateField, validateForm }) => (
-          <Form className="form">
-            <div className="inputField">
-              <label htmlFor="email">Email</label>
-              <Field
-                type="text"
-                name="email"
-                id="email"
-                placeholder="Enter your email"
-                validate={validateEmail}
-              />
-              {errors.email && touched.email && <div>{errors.email}</div>}
-            </div>
-            <div className="inputField">
-              <label htmlFor="password">Password</label>
-              <Field
-                type="password"
-                name="password"
-                id="password"
-                placeholder="Enter your password"
-                validate={validatePassword}
-              />
-              {errors.password && touched.password && (
-                <div>{errors.password}</div>
-              )}
-            </div>
+    <div className="page">
+      <div className="loginForm">
+        <Formik
+          initialValues={{
+            email: "",
+            password: "",
+          }}
+          onSubmit={async (values) => {
+            try {
+              await dispatch(login(values.email, values.password));
+            } catch (err) {
+              setError(err.message);
+            }
+          }}
+        >
+          {({ errors, touched, validateField, validateForm }) => (
+            <Form className="form">
+              <div className="inputField">
+                <label htmlFor="email" className="label">
+                  Email
+                </label>
+                <Field
+                  type="text"
+                  name="email"
+                  id="email"
+                  placeholder="Enter your email"
+                  validate={validateEmail}
+                />
+                {errors.email && touched.email && (
+                  <div className="error">{errors.email}</div>
+                )}
+              </div>
+              <div className="inputField">
+                <label htmlFor="password" className="label">
+                  Password
+                </label>
+                <Field
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Enter your password"
+                  validate={validatePassword}
+                />
+                {errors.password && touched.password && (
+                  <div className="error">{errors.password}</div>
+                )}
+              </div>
 
-            <button
-              className="btn"
-              type="submit"
-              onClick={() =>
-                validateForm().then(() => console.log("Not valid"))
-              }
-            >
-              Login
-            </button>
-          </Form>
-        )}
-      </Formik>
+              <button
+                className="btn"
+                type="submit"
+                onClick={() =>
+                  validateForm().then(() => console.log("Not valid"))
+                }
+              >
+                Login
+              </button>
+            </Form>
+          )}
+        </Formik>
+      </div>
     </div>
   );
 };
