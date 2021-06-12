@@ -4,10 +4,6 @@
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
-page {
-  background-image: url("../../assets/login.jpg");
-  background-size: cover;
-}
 
 .loginForm {
   background-color: #cacaca;
@@ -29,7 +25,7 @@ page {
 .form {
   padding: 5px;
   text-align: center;
-  margin-top: 12px;
+  margin-top: 25px;
 }
 
 .btn {
@@ -62,4 +58,26 @@ page {
 .error {
   color: red;
   border: groove;
+}
+
+@media (max-width: 800px) {
+  .loginForm {
+    width: 400px;
+  }
+}
+
+@media (max-width: 500px) {
+  .loginForm {
+    width: 310px;
+  }
+}
+
+@media (max-width: 300px) {
+  .loginForm {
+    width: 200px;
+  }
+  .btn {
+    width: 140px;
+    height: 40px;
+  }
 }
