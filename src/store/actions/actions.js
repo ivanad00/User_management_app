@@ -1,4 +1,4 @@
-import { FETCH_ALL, LOGIN } from "../constants/actionTypes";
+import { FETCH_ALL, LOGIN, SEARCH } from "../constants/actionTypes";
 
 export const login = (email, password) => {
   return async (dispatch) => {
@@ -28,10 +28,10 @@ export const login = (email, password) => {
 };
 
 export const fetchAllUsers = (page) => {
-  return async (dispatch, getState) => {
+  return async (dispatch) => {
     let data;
     try {
-      const response = await fetch(`https://reqres.in/api/users?per_page=12`, {
+      const response = await fetch(`https://reqres.in/api/users?per_page=20`, {
         method: "GET",
         headers: {
           "Content-type": "application/json",
@@ -49,5 +49,14 @@ export const fetchAllUsers = (page) => {
     } catch (err) {
       throw err;
     }
+  };
+};
+
+export const search = (search) => {
+  return async (dispatch) => {
+    dispatch({
+      type: SEARCH,
+      payload: search,
+    });
   };
 };
