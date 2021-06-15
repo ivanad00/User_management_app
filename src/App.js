@@ -3,11 +3,12 @@ import Search from "./components/Search/Search";
 import LoginPage from "./pages/Login/LoginPage";
 import UsersList from "./pages/Users/UsersList";
 import "./components/Search/search.css";
+import NewUser from "./components/NewUser/NewUser";
+import NewUserForm from "./components/NewUserForm/NewUserForm";
 
 function App() {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
-  const usersList = useSelector((state) => state.usersList);
-  const search = useSelector((state) => state.search);
+  const isButtonClicked = useSelector((state) => state.isButtonClicked);
 
   return (
     <>
@@ -16,8 +17,13 @@ function App() {
           <LoginPage />
         ) : (
           <>
-            <Search handleChange={(e) => e.target.value} />
+            <Search />
             <UsersList />
+            {!isButtonClicked ? (
+              <NewUser />
+            ) : (
+              <NewUserForm onSubmit={console.log("submit")} />
+            )}
           </>
         )}
       </div>

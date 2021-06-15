@@ -40,6 +40,18 @@ export default (state = initialState, action) => {
         isButtonClicked: !state.isButtonClicked,
       };
 
+    case ADD_USER:
+      const newUsers = [...state.usersList];
+      newUsers.unshift(action.user);
+      return {
+        ...state,
+        usersList: newUsers,
+      };
+    case UPLOAD_IMAGE:
+      return {
+        ...state,
+        imagePath: action.payload,
+      };
     default:
       return state;
   }

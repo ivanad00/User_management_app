@@ -1,0 +1,77 @@
+.newUserForm {
+  width: 500px;
+  height: 770px;
+  margin: auto;
+  padding: 5px;
+  overflow: hidden;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.title {
+  margin: 12px;
+  font-size: x-large;
+}
+
+.form {
+  padding: 5px;
+  text-align: center;
+  margin-top: 25px;
+  background-color: #dcdcdc;
+  border: ridge;
+  border-radius: 15px;
+  height: 730px;
+}
+
+#email,
+#firstName,
+#lastName,
+#avatar {
+  width: 100%;
+  padding: 20px 0;
+  margin: 5px 0;
+  border-radius: 15px;
+  outline: none;
+  border: none;
+  background: #e8f0fe;
+  text-emphasis-color: white;
+  -webkit-text-fill-color: rgb(88, 72, 72);
+  -webkit-box-shadow: 0 0 0px 100px #fff inset;
+
+  /* width: 100%;
+  padding: 20px 0;
+  border-left: 0;
+  margin: 5px 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid beige;
+  background: none; */
+  /* text-emphasis-color: white; */
+}
+#input {
+  width: 100%;
+  padding: 20px 0;
+  margin: 5px 0;
+  border-radius: 15px;
+  outline: none;
+  border: none;
+  text-emphasis-color: white;
+  -webkit-autofill: disable;
+  -webkit-text-fill-color: rgb(88, 72, 72);
+}
+
+.error {
+  color: red;
+}
+
+.submit {
+  width: 90px;
+  height: 40px;
+  margin: auto;
+  position: relative;
+  border-radius: 15px;
+  border: none;
+  background: white;
+  font-size: large;
+  border: ridge;
+}
