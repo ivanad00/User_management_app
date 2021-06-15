@@ -1,37 +1,15 @@
-import React, { useState } from "react";
-import { Formik, Form, Field } from "formik";
+import React from "react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
 import { login } from "../../store/actions/actions";
+import PropTypes from "prop-types";
 import "./loginPage.css";
 
-// import validateLogin from "../../components/validateLogin/validateLogin.js";
-
-const LoginPage = ({ errors }) => {
+const LoginPage = () => {
   const dispatch = useDispatch();
-  const [error, setError] = useState(null);
-
-  function validateEmail(value) {
-    let error;
-    if (!value) {
-      error = "Required";
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
-      error = "Invalid email address";
-    }
-    return error;
-  }
-
-  function validatePassword(value) {
-    let error;
-    if (!value) {
-      error = "Required";
-    } else if (value.length < 6) {
-      error = "Too short!";
-    }
-    return error;
-  }
 
   return (
-    <div className="page">
+    <>
       <div className="loginForm">
         <Formik
           initialValues={{
@@ -42,12 +20,30 @@ const LoginPage = ({ errors }) => {
             try {
               await dispatch(login(values.email, values.password));
             } catch (err) {
-              setError(err.message);
+              console.log(err.message, "login");
             }
           }}
+          validate={(values) => {
+            const errors = {};
+
+            if (!values.email) {
+              errors.email = "Email is required";
+            } else if (
+              !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+            ) {
+              errors.email = "Email not valid";
+            }
+
+            if (!values.password) {
+              errors.password = "Password required";
+            } else if (values.password.length < 6) {
+              errors.password = "Password too short!";
+            }
+            return errors;
+          }}
         >
-          {({ errors, touched, validateField, validateForm }) => (
-            <Form className="form">
+          {({ isSubmitting }) => (
+            <Form className="formLogin">
               <div className="inputField">
                 <label htmlFor="email" className="label">
                   Email
@@ -57,11 +53,10 @@ const LoginPage = ({ errors }) => {
                   name="email"
                   id="email"
                   placeholder="Enter your email"
-                  validate={validateEmail}
                 />
-                {errors.email && touched.email && (
-                  <div className="error">{errors.email}</div>
-                )}
+                <div className="error">
+                  <ErrorMessage name="email" />
+                </div>
               </div>
               <div className="inputField">
                 <label htmlFor="password" className="label">
@@ -72,28 +67,26 @@ const LoginPage = ({ errors }) => {
                   name="password"
                   id="password"
                   placeholder="Enter your password"
-                  validate={validatePassword}
                 />
-                {errors.password && touched.password && (
-                  <div className="error">{errors.password}</div>
-                )}
+                <div className="error">
+                  <ErrorMessage name="password" />
+                </div>
               </div>
 
-              <button
-                className="btn"
-                type="submit"
-                onClick={() =>
-                  validateForm().then(() => console.log("Not valid"))
-                }
-              >
+              <button className="btn" type="submit">
                 Login
               </button>
             </Form>
           )}
         </Formik>
       </div>
-    </div>
+    </>
   );
+};
+
+LoginPage.propTypes = {
+  email: PropTypes.string,
+  password: PropTypes.string,
 };
 
 export default LoginPage;
