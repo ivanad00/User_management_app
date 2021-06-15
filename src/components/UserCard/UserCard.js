@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./userCard.css";
 
 const UserCard = (props) => {
@@ -9,6 +10,12 @@ const UserCard = (props) => {
       <p className="lastName">{props.last_name}</p>
     </div>
   );
+};
+
+UserCard.propTypes = {
+  first_name: PropTypes.string,
+  last_name: PropTypes.string,
+  avatar: PropTypes.string,
 };
 
 export default UserCard;

@@ -3,6 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { search } from "../../store/actions/actions";
 import "../Search/search.css";
+import PropTypes from "prop-types";
 
 const Search = (props) => {
   return (
@@ -22,6 +23,8 @@ const Search = (props) => {
 
 const mapStateToProps = (state) => console.log(state.search);
 
-//const mapDispatchToProps = {};
+Search.propTypes = {
+  onChange: PropTypes.func,
+};
 
 export default connect(mapStateToProps, { search })(Search);

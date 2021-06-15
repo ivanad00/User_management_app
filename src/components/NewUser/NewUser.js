@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { buttonClicked } from "../../store/actions/actions";
+import PropTypes from "prop-types";
 import "./newUser.css";
 
 const NewUser = () => {
@@ -20,4 +21,9 @@ const NewUser = () => {
     </section>
   );
 };
+
+NewUser.propTypes = {
+  handleClick: PropTypes.func,
+};
+
 export default NewUser;
