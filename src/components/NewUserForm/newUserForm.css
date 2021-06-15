@@ -6,6 +6,10 @@
   overflow: hidden;
   text-align: center;
   margin-top: 100px;
+  background-color: #dcdcdc;
+  border: ridge;
+  border-radius: 15px;
+  height: 790px;
 }
 
 .title {
@@ -17,10 +21,6 @@
   padding: 5px;
   text-align: center;
   margin-top: 25px;
-  background-color: #dcdcdc;
-  border: ridge;
-  border-radius: 15px;
-  height: 730px;
 }
 
 #email,
@@ -48,7 +48,7 @@
   background: none; */
   /* text-emphasis-color: white; */
 }
-#input {
+#uploadPhoto {
   width: 100%;
   padding: 20px 0;
   margin: 5px 0;
@@ -74,4 +74,33 @@
   background: white;
   font-size: large;
   border: ridge;
+  margin: auto;
+}
+
+@media (max-width: 800px) {
+  .form {
+    width: 450px;
+  }
+  .newUserForm {
+    width: 450px;
+  }
+}
+
+@media (max-width: 500px) {
+  .form {
+    width: 280px;
+  }
+  .newUserForm {
+    width: 280px;
+  }
+}
+
+@media (max-width: 300px) {
+  .form {
+    width: 200px;
+  }
+  .submit {
+    width: 140px;
+    height: 40px;
+  }
 }

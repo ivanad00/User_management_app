@@ -6,9 +6,11 @@
   height: 130px;
   margin: 20px 10px;
   border-radius: 30px;
+  border: ridge;
+  outline-color: #dcdcdc;
   /* -webkit-box-shadow: 1px 1px 18px 8px rgba(161, 153, 161, 1);
   -moz-box-shadow: 1px 1px 18px 8px rgba(161, 153, 161, 1); */
-  box-shadow: 1px 1px 18px 8px rgba(161, 153, 161, 1);
+  /* box-shadow: 1px 1px 18px 8px rgb(161 153 161 / 32%); */
 }
 
 .userImg {
