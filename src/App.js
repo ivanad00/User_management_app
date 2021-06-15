@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import Search from "./components/Search/Search";
 import LoginPage from "./pages/Login/LoginPage";
-import UsersList from "./pages/Users/UsersList";
+import UsersList from "./components/UsersList/UsersList";
 import "./components/Search/search.css";
 import NewUser from "./components/NewUser/NewUser";
 import NewUserForm from "./components/NewUserForm/NewUserForm";
@@ -19,11 +19,7 @@ function App() {
           <>
             <Search />
             <UsersList />
-            {!isButtonClicked ? (
-              <NewUser />
-            ) : (
-              <NewUserForm onSubmit={console.log("submit")} />
-            )}
+            {!isButtonClicked ? <NewUser /> : <NewUserForm />}
           </>
         )}
       </div>
