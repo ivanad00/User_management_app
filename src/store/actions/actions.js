@@ -1,4 +1,9 @@
-import { FETCH_ALL, LOGIN, SEARCH } from "../constants/actionTypes";
+import {
+  FETCH_ALL,
+  LOGIN,
+  SEARCH,
+  BUTTON_CLICKED,
+} from "../constants/actionTypes";
 
 export const login = (email, password) => {
   return async (dispatch) => {
@@ -59,4 +64,8 @@ export const search = (search) => {
       payload: search,
     });
   };
+};
+
+export const buttonClicked = () => {
+  return { type: BUTTON_CLICKED };
 };

@@ -1,9 +1,18 @@
-import { FETCH_ALL, LOGIN, SEARCH } from "../constants/actionTypes";
+import {
+  FETCH_ALL,
+  LOGIN,
+  SEARCH,
+  BUTTON_CLICKED,
+  ADD_USER,
+  UPLOAD_IMAGE,
+} from "../constants/actionTypes";
 
 const initialState = {
   isLoggedIn: false,
   usersList: [],
   search: "",
+  isButtonClicked: false,
+  imagePath: "",
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -23,6 +32,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         search: action.payload,
+      };
+
+    case BUTTON_CLICKED:
+      return {
+        ...state,
+        isButtonClicked: !state.isButtonClicked,
       };
 
     default:
