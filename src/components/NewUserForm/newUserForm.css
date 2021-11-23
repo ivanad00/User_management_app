@@ -36,17 +36,9 @@
   background: #e8f0fe;
   text-emphasis-color: white;
   -webkit-text-fill-color: rgb(88, 72, 72);
+  box-shadow: 0 0 0px 100px #fff inset;
   -webkit-box-shadow: 0 0 0px 100px #fff inset;
 
-  /* width: 100%;
-  padding: 20px 0;
-  border-left: 0;
-  margin: 5px 0;
-  border-top: 0;
-  border-right: 0;
-  border-bottom: 1px solid beige;
-  background: none; */
-  /* text-emphasis-color: white; */
 }
 #uploadPhoto {
   width: 100%;

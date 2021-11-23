@@ -1,8 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
 import { login } from "../../store/actions/actions";
-import PropTypes from "prop-types";
+
 import "./loginPage.css";
 
 const LoginPage = () => {

@@ -1,10 +1,12 @@
-import { useSelector } from "react-redux";
 import Search from "./components/Search/Search";
 import LoginPage from "./pages/Login/LoginPage";
 import UsersList from "./components/UsersList/UsersList";
-import "./components/Search/search.css";
 import NewUser from "./components/NewUser/NewUser";
 import NewUserForm from "./components/NewUserForm/NewUserForm";
+
+import { useSelector } from "react-redux";
+
+import "./components/Search/search.css";
 
 function App() {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);

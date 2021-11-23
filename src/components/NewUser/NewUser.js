@@ -1,7 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import { useDispatch } from "react-redux";
 import { buttonClicked } from "../../store/actions/actions";
-import PropTypes from "prop-types";
+
 import "./newUser.css";
 
 const NewUser = () => {

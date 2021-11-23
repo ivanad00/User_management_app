@@ -1,9 +1,11 @@
-import { Field, Formik } from "formik";
 import React from "react";
+import PropTypes from "prop-types";
+
+import { Field, Formik } from "formik";
 import { connect } from "react-redux";
 import { search } from "../../store/actions/actions";
+
 import "../Search/search.css";
-import PropTypes from "prop-types";
 
 const Search = (props) => {
   return (

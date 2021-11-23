@@ -53,6 +53,7 @@
   text-emphasis-color: white;
   -webkit-autofill: disable;
   -webkit-text-fill-color: rgb(88, 72, 72);
+  box-shadow: 0 0 0px 100px #fff inset;
   -webkit-box-shadow: 0 0 0px 100px #fff inset;
 }
 

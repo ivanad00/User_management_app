@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchAllUsers } from "../../store/actions/actions";
 import UserCard from "../UserCard/UserCard";
 import PropTypes from "prop-types";
+
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAllUsers } from "../../store/actions/actions";
+
 import "./usersList.css";
 
 const UsersList = () => {
@@ -16,8 +18,6 @@ const UsersList = () => {
     };
     getData();
   }, [dispatch]);
-
-  console.log(search);
 
   return (
     usersList

@@ -1,8 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import { useDispatch, useSelector } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { addUser, buttonClicked, imagePath } from "../../store/actions/actions";
-import PropTypes from "prop-types";
+import { addUser, buttonClicked } from "../../store/actions/actions";
 
 import "./newUserForm.css";
 
