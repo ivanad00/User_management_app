@@ -16,8 +16,8 @@ export const login = (email, password) => {
           "Content-type": "application/json",
         },
         body: JSON.stringify({
-          email: "eve.holt@reqres.in",
-          password: "cityslicka",
+          email,
+          password,
         }),
       });
 
